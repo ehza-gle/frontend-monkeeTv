@@ -9,7 +9,7 @@ const RunningText = ({ runningtexts }) => {
           key={_runningtexts.id}
           className="bottom-0 fixed inline-flex bg-yellow-400 pl-0 ml-0 text-4xl"
         >
-          <div class="text-center mx-auto pl-2 max-w-xs bg-yellow-400">
+          <div className="text-center mx-auto pl-2 max-w-xs bg-yellow-400">
             {moment().format("LT")}
           </div>
           <div className="ml-4 bg-green-300 min-w-full">
