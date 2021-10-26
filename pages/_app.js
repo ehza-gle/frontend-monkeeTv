@@ -1,7 +1,14 @@
 import App from "next/app"
 import Head from "next/head"
 import Layout from "../components/Layout"
-import { getRunningtexts, getEspressos, getNoncoffees, getSignatures, getTeas, getTraditionals } from "../utils/api"
+import {
+  getRunningtexts,
+  getEspressos,
+  getNoncoffees,
+  getSignatures,
+  getTeas,
+  getTraditionals,
+} from "../utils/api"
 import "../styles/index.css"
 
 const MyApp = ({ Component, pageProps }) => {
@@ -34,13 +41,24 @@ MyApp.getInitialProps = async (ctx) => {
   const appProps = await App.getInitialProps(ctx)
   // Fetch global site settings from Strapi
   const runningtexts = await getRunningtexts()
-  const signatures   = await getSignatures()
-  const teas         = await getTeas()
-  const espressos    = await getEspressos()
+  const signatures = await getSignatures()
+  const teas = await getTeas()
+  const espressos = await getEspressos()
   const traditionals = await getTraditionals()
-  const noncoffees   = await getNoncoffees()
+  const noncoffees = await getNoncoffees()
   // Pass the data to our page via props
-  return { ...appProps, pageProps: { espressos, traditionals, noncoffees, teas, signatures, runningtexts, path: ctx.pathname } }
+  return {
+    ...appProps,
+    pageProps: {
+      espressos,
+      traditionals,
+      noncoffees,
+      teas,
+      signatures,
+      runningtexts,
+      path: ctx.pathname,
+    },
+  }
 }
 
 export default MyApp
