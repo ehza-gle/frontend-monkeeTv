@@ -5,8 +5,8 @@ const Layout = ({ children, categories, runningtexts }) => {
     <div className="flex justify-center bg-gray-200">
       <div className="max-w-screen flex flex-col min-h-screen w-full">
         {/* <CategoryButtons categories={categories}/> */}
-      <RunningText runningtexts={runningtexts} />
-        <div className="flex-grow ml-2 mr-2" >{children} </div>
+        <RunningText runningtexts={runningtexts} />
+        <div className="flex-grow ml-2 mr-2">{children} </div>
       </div>
       <div
         hidden
@@ -18,8 +18,8 @@ const Layout = ({ children, categories, runningtexts }) => {
 }
 
 export async function getStaticProps() {
-  const runningtexts  = await getRunningtexts();
-  
+  const runningtexts = await getRunningtexts()
+
   return { props: { runningtexts } }
 }
 
