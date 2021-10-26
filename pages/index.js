@@ -16,8 +16,6 @@ import {
   getRunningtexts,
 } from "../utils/api"
 
-const { parse, stringify } = require("flatted/cjs")
-
 const HomePage = ({
   products,
   signatures,
