@@ -8,6 +8,8 @@ import NoncoffeeList from "../components/NoncoffeeList"
 import RunningText from "../components/RunningText"
 import { getProducts, getSignatures, getTeas, getNoncoffees, getEspressos, getTraditionals, getRunningtexts} from "../utils/api"
 
+const {parse, stringify} = require('flatted/cjs');
+
 const HomePage = ({ products, signatures, noncoffees, teas, espressos, traditionals, runningtexts }) => {
   return (
     <div className="w-full">
